@@ -1,0 +1,123 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+body{
+    background:#242121;
+    display:flex;
+    flex-direction: column;
+    color:white;
+    min-height:100vh;
+}
+.tasks{
+    padding: 40px 60px;
+    margin:0 auto;
+    width:100%;
+    
+}
+.tasks h1{
+    font-size: 2rem;
+    color:grey;
+    margin-bottom:20px;
+}
+input,button{
+    border:none;
+    outline:none;
+    appearance:none;
+    background:none;
+}
+.container{
+    display: flex;
+}
+
+#input{
+     flex:1 1 0%;
+     padding: 1rem;
+     border-radius: 1rem;
+     margin-right:1rem;
+     background-color: #474242;
+     color:#d2cccc;
+     font-size:1.25rem;
+}
+#input::placeholder{
+    color:#9e9e9e;
+}
+#submit{
+    color:#e50f85;
+    font-size:1.25rem;
+    background-image:linear-gradient(to right,#f10775,rgb(224, 11, 224));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    cursor:pointer;
+    transition: 0.5s;
+}
+#submit:hover{
+    opacity:0.8;
+}
+#submit:active{
+    opacity:0.6;
+}
+section{
+    flex: 1 1 0%;
+    margin: 0 auto;
+    width:100%;
+    
+}
+.task-list{
+    padding: 1rem;
+}
+.task-list h2{
+    font-size: 1.5rem;
+    color: grey;
+    margin:0 3rem 1rem;
+}
+#task-container .task{
+    display: flex;
+    justify-content: space-between;
+    padding:1rem;
+    margin:0 3rem 1rem;
+    background-color: #080808;
+    border-radius:1rem;
+    
+}
+ #task-container .task .content{
+    flex: 1 1 0%;
+ }
+ .content input{
+    color:#f0f8ff;
+    width:100%;
+    font-size:1.125rem;
+    transition: 0.4s;
+    display:block;
+}
+ .content input:not(:read-only){
+    color:#f347a5;
+}
+ .action{
+    display:flex;
+    margin: 0 -0.5rem;
+}
+.action button{
+    font-size:1.125rem;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+ .action button:hover{
+    opacity:0.8;
+}
+.action button:active{
+    opacity:0.6;
+}
+ .edit{
+    background-image:linear-gradient(to right,#f10775,rgb(224, 11, 224));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    cursor:pointer; 
+}
+ .delete{
+    color:crimson;
+    cursor:pointer; 
+}
