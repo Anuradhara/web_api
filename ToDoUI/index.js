@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submit');
     const taskContainer = document.getElementById('task-container');
 
-    // Load tasks from the API when the page loads
+    
     loadTasks();
 
     submitButton.addEventListener('click', addTask);
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify({
                 name: taskText,
-                isComplete: false // Assuming default is incomplete
+                isComplete: false 
             }),
         })
         .then(response => {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            const taskElement = createTaskElement(data.id, data.name); // Assuming 'id' and 'name' are returned by the API
+            const taskElement = createTaskElement(data.id, data.name); 
             taskContainer.appendChild(taskElement);
             input.value = '';
         })
@@ -97,13 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 taskInputElement.setAttribute('readonly', 'readonly');
                 editButton.innerText = 'Edit';
-                updateTask(taskId, taskInputElement.value); // Update task on save
+                updateTask(taskId, taskInputElement.value); 
             }
         });
 
         deleteButton.addEventListener('click', () => {
             if (confirm('Are you sure you want to delete this task?')) {
-                deleteTask(taskId, taskElement); // Delete task
+                deleteTask(taskId, taskElement);
             }
         });
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({
                 id: taskId,
                 name: newTaskText,
-                isComplete: false // Assuming default is incomplete
+                isComplete: false 
             }),
         })
         .then(response => {
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function deleteTask(taskId, taskElement) {
-        // DELETE request to delete a task
+        
         fetch(`https://localhost:7035/api/ToDo/${taskId}`, {
             method: 'DELETE',
         })
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             data.forEach(task => {
-                const taskElement = createTaskElement(task.id, task.name); // Assuming 'id' and 'name' are returned by the API
+                const taskElement = createTaskElement(task.id, task.name); 
                 taskContainer.appendChild(taskElement);
             });
         })
