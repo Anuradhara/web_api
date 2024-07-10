@@ -14,4 +14,6 @@ Uses Fetch API for making HTTP requests to the ASP.NET Core API.
 Implements basic validation and error handling.
 
 ![Screenshot 2024-07-10 135111](https://github.com/Anuradhara/web_api/assets/175148397/082ccb3b-92ee-4270-ae39-91b527049936)
+
+
 ![Screenshot 2024-07-10 135200](https://github.com/Anuradhara/web_api/assets/175148397/2a8cd4f5-c427-4c10-985f-23a078099b8d)
